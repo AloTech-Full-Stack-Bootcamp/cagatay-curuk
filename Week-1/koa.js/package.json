@@ -1,0 +1,17 @@
+{
+  "name": "koa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-ejs": "^4.3.0",
+    "koa-router": "^10.1.1"
+  }
+}

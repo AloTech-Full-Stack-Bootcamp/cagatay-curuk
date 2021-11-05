@@ -1,7 +1,8 @@
-# Week 1 
+# Week 2
 
-* Node.js fs modulü ile dosya üzerinde CRUD işlemleri yapılmıştır.
-* Http modulü ile kendi sunucumuzu yazdık.
-* Express.js ile kendi sunucumuzu yazdık template engine olarak pug kullandım.
-* Koa.js ile kendi sunucumuzu yazdık template engine olarak ejs kullandım.
+* Express.js ile blog kodlandı 
+* CRUD işlemleri yapıldı. 
+* Herokuya deploy edildi.
+* AWS ile statik dosyaları tutmak araştırılacak.
 
+heroku link : https://cagatay-pcat-blog.herokuapp.com

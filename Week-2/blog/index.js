@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const fileUpload = require('express-fileupload');
 const methodOverride = require("method-override");
 const ejs = require("ejs");
+require('dotenv').config();
+
 
 const Post = require("./model/Post");
 
@@ -17,7 +19,7 @@ app.set("view engine", "ejs"); // define template engine
 // mongodb connection
 mongoose
     .connect(
-        'mongodb+srv://cagatay:Denemeveritabani@cluster0.1g8zr.mongodb.net/test',
+        `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.1g8zr.mongodb.net/test`,
         {
             useNewUrlParser: true,
             useUnifiedTopology: true,

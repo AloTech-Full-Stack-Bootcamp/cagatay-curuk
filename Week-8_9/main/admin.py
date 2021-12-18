@@ -2,10 +2,6 @@ from django.contrib import admin
 from . import models
 # Register your models here.
 
-def comment_like_count(self):
-    return f'{self.comments.count()} / {self.likes.count()}'
-
-
 class LikeInline(admin.TabularInline):
     model = models.Comment
     extra = 1
@@ -14,12 +10,15 @@ class LikeInline(admin.TabularInline):
 
 @admin.register(models.Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'content', 'created_at', 'updated_at', comment_like_count)
+    list_display = ('title', 'author', 'content', 'created_at', 'updated_at', 'likes_comments_count')
     list_filter = ('author__username',)
     search_fields = ('title', 'content', 'author__username')
     ordering = ('-created_at',)
     autocomplete_fields = ('author',)
     inlines = [LikeInline]
+
+    def likes_comments_count(self,post):
+        return f'{post.likes.count()} / {post.comments.count()}'
 
 @admin.register(models.Like)
 class LikeAdmin(admin.ModelAdmin):

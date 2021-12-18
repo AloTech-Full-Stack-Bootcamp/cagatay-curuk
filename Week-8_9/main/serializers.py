@@ -18,7 +18,6 @@ class PostSerializier(serializers.ModelSerializer):
     def get_likes_comments_count(self, obj):
         return f"Likes: {obj.likes_count} / Comments: {obj.comments_count}"
         
-    
     class Meta:
         model = Post
         fields = ('id', 'url', 'image', 'title', 'content', 'author', 'created_at', 'updated_at','likes_count','comments_count','likes_comments_count')
